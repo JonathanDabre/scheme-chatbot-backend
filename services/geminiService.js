@@ -22,7 +22,7 @@ async function generateResponse(prompt) {
             ],
         };
 
-        console.log("Sending request to Gemini API:", data); // Log the request data
+        // console.log("Sending request to Gemini API:", data); // Log the request data
 
         // Make the API request
         const response = await axios.post(GEMINI_API_URL, data, {
@@ -32,7 +32,7 @@ async function generateResponse(prompt) {
 
         // Extract and return the response
         const botResponse = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
-        console.log("Received response from Gemini API:", botResponse); // Log the received response
+        // console.log("Received response from Gemini API:", botResponse); // Log the received response
         return botResponse || "Sorry, something went wrong.";
     } catch (error) {
         console.error("Error communicating with Gemini API:", error.message);
