@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');  // Import the cors module
 const chatRoutes = require('./routes/chatRoutes');
 const schemeRoutes = require('./routes/schemeRoutes');
+const featureRoutes = require('./routes/featureRoutes')
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,6 +25,7 @@ app.use(bodyParser.json());
 // Use chat routes and scheme routes
 app.use('/api/chat', chatRoutes);
 app.use('/api/schemes', schemeRoutes);
+app.use('/api/features', featureRoutes);
 
 // Start the server
 app.listen(PORT, () => {
